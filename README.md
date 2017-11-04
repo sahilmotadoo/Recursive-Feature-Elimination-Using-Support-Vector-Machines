@@ -5,6 +5,7 @@ This allows us to apply SVM's directly to alreaady existing scores from other te
 1. HMM (Hidden Markov Model)
 2. OGS (Opcode Graph Similarity)
 3. SSD (Simple Substitution Distance)
+
 These techniques were used to determine whether the given sample is malware or benign. The file (mbscore.csv) consists of these scores for both malware and benign files (first 40 samples are malware, the next 40 samples are benign). Also since this code is written in python, I have added an additional classification score:
 1. +1 denotes a malware sample
 2. -1 denotes a benign sample
