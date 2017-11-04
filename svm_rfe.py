@@ -4,6 +4,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import warnings
 
+#Function to test model accuracy based on testing data
+def accuracy(model, x_test, y_test):
+	prediction = model.predict(x_test)
+	print "Accuracy of model:", accuracy_score(y_test, prediction) * 100, "%"
+
 #Supress Warnings
 warnings.filterwarnings("ignore")
 
@@ -20,6 +25,7 @@ scores = df.filter(['Scores'])
 
 #Recursively eliminate features based on the lowest weight
 rfeIndex = nFeatures
+
 while True:
 	#Split into training and testing
 	x_train, x_test, y_train, y_test = train_test_split(samples, scores, test_size = 0.50, train_size = 0.50)
@@ -41,6 +47,7 @@ while True:
 			min = coef[0][i]
 	if len(samples.columns) == 1:
 		print "After recursive elimination we have the", samples.columns[index], "feature with a score of:", min
+		accuracy(model, x_test, y_test)
 		break
 	else:
 		print "Lowest feature weight is for", samples.columns[index], "with a value of:", min
@@ -48,6 +55,7 @@ while True:
 
 		#Drop the feature in the 'samples' dataframe based on the lowest feature index
 		samples.drop(samples.columns[index], axis = 1, inplace = True)
-		
+		accuracy(model, x_test, y_test)
+		print "\n"
 		rfeIndex = rfeIndex - 1
 		nFeatures = nFeatures - 1
