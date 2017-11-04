@@ -23,9 +23,9 @@ nFeatures = len(df.columns) - 1
 samples = df.filter(['HMM', 'SSD', 'OGS'])
 scores = df.filter(['Scores'])
 
-#Recursively eliminate features based on the lowest weight
 rfeIndex = nFeatures
 
+#Recursively eliminate features based on the lowest weight
 while True:
 	#Split into training and testing
 	x_train, x_test, y_train, y_test = train_test_split(samples, scores, test_size = 0.50, train_size = 0.50)
