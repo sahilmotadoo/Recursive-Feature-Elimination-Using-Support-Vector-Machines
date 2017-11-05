@@ -26,5 +26,6 @@ But, there is always some dependency between features, which show up in the recu
 Thus, we get a higher quality model, at the risk of being computationally expensive. 
 
 I have used the Python ML library scikit-learn in order to implement SVM.
+
 On running this program, we rank the feature weights, eliminate the feature with the lowest weight and continue the process recursively.
 Finally we calculate the accuracy of the model at every step and see that by reducing the features, the accuracy of the model is not affected significantly.  
