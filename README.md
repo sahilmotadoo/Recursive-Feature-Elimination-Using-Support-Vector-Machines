@@ -1,4 +1,4 @@
-#Recursive-Feature-Elimination-using-Support-Vector-Machines
+#Recursive_Feature_Elimination_using_Support_Vector_Machines
 
 Support Vector Machines (SVM) usually generate a classification score rather than other techniques such as Principal Component Analysis (PCA) or Hidden markov Models (HMM).
 This allows us to apply SVM's directly to alreaady existing scores from other techniques. Here, I have classification scores of 3 techniques, namely:
